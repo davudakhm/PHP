@@ -3,12 +3,13 @@
     <head>
         <title> Registration </title>
         <link rel = "stylesheet" href = "style.css">
+
     </head>
 <!--Add funcs-->
     <body>  
         <div class="header"> 
             <a><button id="bnn">Home</button></a>
-            <a><button id="bnn">Sign In</button></a>
+            <a href="sign_in.php"><button id="bnn">Sign In</button></a>
         </div>
 
         <h1>Sign Up</h1> 
