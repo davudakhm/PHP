@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Sign Ip </title>
+        <title> Sign In </title>
         <link rel = "stylesheet" href = "style.css">
     </head>
 <!--Add funcs-->
