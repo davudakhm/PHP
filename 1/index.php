@@ -8,7 +8,7 @@
 <!--Add funcs-->
     <body>  
         <div class="header"> 
-            <a><button id="bnn">Home</button></a>
+            <a href="tasktable.php"><button id="bnn">Home</button></a>
             <a href="sign_in.php"><button id="bnn">Sign In</button></a>
         </div>
 
@@ -27,23 +27,22 @@
 </html> 
 
 <?php   
-    //Задаем парметры для подключения к базе данных
-    define('hostName', "localhost");
-    define('bdName', "project");
-    define('userName', "root");
-    define('password', "");
-
-    //Создаем соединение с базой данных
-    $conn = new PDO('mysql:host='.hostName.'; bdname='.bdName, userName, password);
+    //Подключение к базе данных
+    require "config.php";
 
     //Проверка нажатия на ккнопку
     if(isset($_POST["btn"])){
         $login = $_POST["lgn"];
         $password = $_POST["pswrd"];
-        $cpassword = $_POST["cpswrd"];
+       // $cpassword = $_POST["cpswrd"];
 
-        $request = "INSERT INTO users(login, password) VALUES(?,?)"; 
+        $request = "INSERT INTO users(login, password) VALUES (?,?)"; 
 
-       // $start = mysqli_stmt_init($conn);
+        //Отправляем данные в базу данных (21.02.2023)
+        $result = $pdo->prepare($request);
+        $result->execute([$login, $password]);
+
+        if($result) echo "Success";
+        else echo "ERROR";
     }
 ?>

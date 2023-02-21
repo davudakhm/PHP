@@ -10,6 +10,7 @@ body {
 
 /* Include the padding and border in an element's total width and height */
 * {
+  font-family: sans-serif;
   box-sizing: border-box;
 }
 
@@ -82,7 +83,7 @@ ul li.checked::before {
 
 /* Style the header */
 .header {
-  background-color: #f44336;
+  background-color: #8fbce9;
   padding: 30px 40px;
   color: white;
   text-align: center;
@@ -120,6 +121,15 @@ input {
   border-radius: 0;
 }
 
+#bnn{
+    height: 40px;
+    width: 90px;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(44, 103, 233);
+    border: none;
+}
+
 .addBtn:hover {
   background-color: #bbb;
 }
@@ -128,7 +138,9 @@ input {
 <body>
 
 <div id="myDIV" class="header">
-  <h2 style="margin:5px">My To Do List</h2>
+  
+  <h2 style="margin:5px">To Do List <a href="sign_in.php"><button id="bnn">Sign In</button></a></h2>
+  
   <input type="text" id="myInput" placeholder="Title...">
   <span onclick="newElement()" class="addBtn">Add</span>
 </div>
