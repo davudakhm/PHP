@@ -1,3 +1,10 @@
+<?php
+  session_start();
+
+  if($_SESSION != null){
+    header("Location: tasktable.php");
+  }
+?>
 <!DOCTYPE html>
 
 <html>
@@ -34,24 +41,22 @@
 </html>
 
 <?php   
-    //Подключение к базе данных
-  //  require "config.php";
-//
-  //  //Проверка нажатия на ккнопку
-  //  if(isset($_POST["sub"])){
-  //      $login = $_POST["uname"];
-  //      $password = $_POST["password"];
-  //     // $cpassword = $_POST["cpswrd"];
-//
-  //      $request = "INSERT INTO users(login, password) VALUES (?,?)"; 
-//
-  //      //Отправляем данные в базу данных (21.02.2023)
-  //      $result = $pdo->prepare($request);
-  //      $result->execute([$login, $password]);
-//
-  //      if($result) echo "Success";
-  //      else echo "ERROR";
-  //  }
+//Подключение к базе данных
+  require "config.php";
+  //Проверка нажатия на ккнопку
+  if(isset($_POST["sub"])){
+      $login = $_POST["uname"];
+      $password = $_POST["password"];
+     // $cpassword = $_POST["cpswrd"];
+      $request = "INSERT INTO users(login, password) VALUES (?,?)"; 
+      //Отправляем данные в базу данных (21.02.2023)
+      $result = $pdo->prepare($request);
+      $result->execute([$login, $password]);
+      if($result) echo "Success";
+      else echo "ERROR";
+      
+      
+  }
 
     if(isset($_POST["lgn"])){
         echo   '<script type="text/javascript">

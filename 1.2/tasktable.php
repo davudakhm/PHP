@@ -1,3 +1,11 @@
+<?php
+  session_start();
+
+  if($_SESSION == null){
+    header("Location: index.php");
+  }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -158,8 +166,12 @@ button {
 <body>
 
 <div id="myDIV" class="header">
-  <input type="text" id="myInput" placeholder="Title...">
-  <span onclick="newElement()" class="addBtn">Add</span>  <form action="" method="post"><button type="submit" name = "lgn">Sign In</button></form>
+  <form action = "addtask.php" >
+    <input type="text" name = "task" id="myInput" placeholder="Title...">
+    <span onclick="newElement()" class="addBtn">Add</span>  
+  </form>
+  <form action="addtask.php" method="post"><button type="submit" name = "lgn">Sign In</button></form>
+  <a href = "logout.php">LOGOUT</a>
 </div>
 
 <ul id="myUL">
@@ -226,11 +238,11 @@ function newElement() {
 </script>
 
 <?php
-if(isset($_POST["lgn"])){
-  echo   '<script type="text/javascript">
-              window.open("index.php", "_self");
-          </script>';
-}
+//if(isset($_POST["lgn"])){
+//  echo   '<script type="text/javascript">
+//              window.open("index.php", "_self");
+//          </script>';
+//}
 ?>
 
 </body>
