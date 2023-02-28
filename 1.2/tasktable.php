@@ -175,6 +175,20 @@ button {
 </div>
 
 <ul id="myUL">
+  <?php
+    //session_start();
+    require "config.php";
+
+    $request = "SELECT * FROM tasks WHERE loginUser = ?"
+
+    $result = $pdo->prepare($request);
+    $result->execute([$_SESSION['login']]);
+
+    foreach($result as $res){
+      //вывод таблицы
+      echo ''
+    }
+  ?>
   <li class="checked">Pay bills</li>
   <li>Read a book</li>
 </ul>
