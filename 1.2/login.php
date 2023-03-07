@@ -57,9 +57,8 @@
      else echo "ERROR";
 
      if($row = $result->fetch()){
-      session_start();
 
-      $_SESSION['uname'] = $row['uname'];
+      $_SESSION['uname'] = $row['login'];
 
       header("Location: tasktable.php");
       

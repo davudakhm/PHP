@@ -166,9 +166,9 @@ button {
 <body>
 
 <div id="myDIV" class="header">
-  <form action = "addtask.php" >
+  <form action = "addtask.php" method="post">
     <input type="text" name = "task" id="myInput" placeholder="Title...">
-    <span onclick="newElement()" class="addBtn">Add</span>  
+    <input type = "submit" name = "addBtn" class="addBtn">  
   </form>
   <form action="addtask.php" method="post"><button type="submit" name = "lgn">Sign In</button></form>
   <a href = "logout.php">LOGOUT</a>
@@ -182,7 +182,7 @@ button {
     $request = "SELECT * FROM tasks WHERE loginUser = ?";
 
     $result = $pdo->prepare($request);
-    $result->execute([$_SESSION['login']]);
+    $result->execute([$_SESSION['uname']]);
 
     foreach($result as $res)
       //вывод таблицы
@@ -251,11 +251,7 @@ function newElement() {
 </script>
 
 <?php
-//if(isset($_POST["lgn"])){
-//  echo   '<script type="text/javascript">
-//              window.open("index.php", "_self");
-//          </script>';
-//}
+
 ?>
 
 </body>
