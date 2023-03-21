@@ -30,7 +30,7 @@
 	   //foreach($result as $res)
 	   // //вывод таблицы
 	   //echo '<div><li>'. $row->task .' <a href="delete.php?id='.$row->id.'" id="card-link-click">X</a></li>' . ' </div>';
-
+			//Добавить UPDATE!!!!!
 	  	?>
 
 		<?php
