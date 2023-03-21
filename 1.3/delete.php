@@ -1,13 +1,23 @@
 <?php 
 
-require 'config.php';
+//require 'config.php';
 
-$id = $_GET['id'];
+session_start();
 
-  $sql = 'DELETE FROM `list` WHERE `id` = ?';
-  $query = $pdo->prepare($sql);
-  $query->execute([$id]);
+$id =  $_GET['id'];
 
-  header('Location: todo.php');
+require "config.php";
+$request = "DELETE FROM `tasks` WHERE `id` =?";
+$result = $pdo->prepare($request);
+$result->execute([$id]);
+header("Location: todo.php");
+
+//$id = $_GET['id'];
+//
+//  $sql = 'DELETE FROM `task` WHERE `id` = ?';
+//  $query = $pdo->prepare($sql);
+//  $query->execute([$id]);
+//
+//  header('Location: todo.php');
 
  ?>
