@@ -1,29 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action=" " method="post">
+			<input name="update" type="text">
+			<input name="su" type="submit">
+	</form>
+</body>
+</html>
+
 <?php 
-
-//require 'config.php';
-
 session_start();
-
-$id =  $_GET['id'];
-$task = $_POST['su'];
-
-require "config.php";
-$request = "UPDATE `tasks` SET `task` = ? WHERE `id` = ?";
-$result = $pdo->prepare($request);
-$result->execute([$id, $task]);
-header("Location: todo.php");
-
-//if(isset($_POST["sub"])){
-//    $login = $_POST["uname"];
-//    $password = $_POST["password"];
-//   // $cpassword = $_POST["cpswrd"];
-//    $request = "INSERT INTO users(login, password) VALUES (?,?)"; 
-//    //Отправляем данные в базу данных (21.02.2023)
-//    $result = $pdo->prepare($request);
-//    $result->execute([$login, $password]);
-//    if($result) echo "Success";
-//    else echo "ERROR";
-//}
-
-//$request2 = "UPDATE `tasks` SET `task`='[value-2]' WHERE `id` = ?"
+if (isset($_POST['su'])){
+    require "config.php";
+    $task = $_POST['update'];
+    $id =  $_GET['id'];
+    $request = "UPDATE `tasks` SET `task` = ? WHERE `id` = ?";
+    $query = $pdo->prepare($request);
+    $query->execute([$task, $id]);
+    header("Location: todo.php"); 
+}
  ?>

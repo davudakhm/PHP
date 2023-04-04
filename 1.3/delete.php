@@ -12,6 +12,8 @@ $result = $pdo->prepare($request);
 $result->execute([$id]);
 header("Location: todo.php");
 
+//$request2 = "UPDATE `tasks` SET `task`='[value-2]' WHERE `id` = ?"
+
 //$id = $_GET['id'];
 //
 //  $sql = 'DELETE FROM `task` WHERE `id` = ?';
