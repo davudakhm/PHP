@@ -22,7 +22,7 @@
 	<form class ="main" action="addtask.php" method="POST">
 		<fieldse>
 			<input type="text" name="task" required>
-			<input type="submit" value="Add">
+			<input type="submit" value="Add" style="margin-top: 10px;">
 		</fieldse>
 		
 	</form>
